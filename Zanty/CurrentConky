@@ -1,0 +1,96 @@
+# conky configuration
+#
+# The list of variables has been removed from this file in favour
+# of keeping the documentation more maintainable.
+# Check http://conky.sf.net for an up-to-date-list.
+#
+# For ideas about how to modify conky, please see:
+# http://crunchbanglinux.org/forums/topic/59/my-conky-config/
+#
+# For help with conky, please see:
+# http://crunchbanglinux.org/forums/topic/2047/conky-help/
+#
+# Enjoy! :)
+##############################################
+#  Settings
+##############################################
+background yes
+use_xft yes
+xftfont Sans-Serif:size=12
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+own_window 1
+own_window_transparent yes
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 200 200
+maximum_width 480
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color white
+#default_shade_color black
+default_outline_color white
+alignment middle_right
+gap_x 30
+gap_y 20
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+color1 222222
+
+TEXT
+${font Sans-Serif:bold:size=12}
+${color}I T ${color1}L ${color}I S ${color1}A S T I M E
+${if_match ${exec date +"%M"} < 35}${if_match ${exec date +"%M"} >= 15}${if_match ${exec date +"%M"} < 20}${color}${endif}${endif}A ${color1}C ${if_match ${exec date +"%M"} >= 15}${if_match ${exec date +"%M"} < 20}${color}${endif}${endif}Q U A R T E R ${color1}D C
+${if_match ${exec date +"%M"} >= 20}${if_match ${exec date +"%M"} < 30}${color}${endif}${endif}T W E N T Y ${if_match ${exec date +"%M"} >= 25}${if_match ${exec date +"%M"} < 30}${color}${endif}${else}${color1}${endif}${if_match ${exec date +"%M"} >= 5}${if_match ${exec date +"%M"} < 10}${color}${endif}${endif}F I V E ${color1}X
+${if_match ${exec date +"%M"} >= 30}${if_match ${exec date +"%M"} < 35}${color}${endif}${endif}H A L F ${color1}B ${if_match ${exec date +"%M"} >= 10}${if_match ${exec date +"%M"} < 15}${color}${endif}${endif}T E N ${color1}F T O
+${else}${if_match ${exec date +"%M"} >= 45}${if_match ${exec date +"%M"} < 50}${color}${endif}${endif}A ${color1}C ${if_match ${exec date +"%M"} >= 45}${if_match ${exec date +"%M"} < 50}${color}${endif}${endif}Q U A R T E R ${color1}D C
+${if_match ${exec date +"%M"} >= 35}${if_match ${exec date +"%M"} < 45}${color}${endif}${endif}T W E N T Y ${if_match ${exec date +"%M"} < 40}${if_match ${exec date +"%M"} >= 35}${color}${endif}${else}${color1}${endif}${if_match ${exec date +"%M"} >= 55}${color}${endif}F I V E ${color1}X
+H A L F B ${if_match ${exec date +"%M"} >= 50}${if_match ${exec date +"%M"} < 55}${color}${endif}${endif}T E N ${color1}F ${color}T O${color1}
+${endif}${if_match ${exec date +"%M"} < 35}${if_match ${exec date +"%M"} > 5}${color}${endif}${endif}P A S T ${color1}E R U ${if_match ${exec date +"%M"} < 35}${if_match ${exec date +"%I"} == 9}${color}${else}${color1}${endif}N I N E
+${if_match ${exec date +"%I"} == 1}${color}${else}${color1}${endif}O N E ${if_match ${exec date +"%I"} == 6}${color}${else}${color1}${endif}S I X ${if_match ${exec date +"%I"} == 3}${color}${else}${color1}${endif}T H R E E
+${if_match ${exec date +"%I"} == 4}${color}${else}${color1}${endif}F O U R ${if_match ${exec date +"%I"} == 5}${color}${else}${color1}${endif}F I V E ${if_match ${exec date +"%I"} == 2}${color}${else}${color1}${endif}T W O
+${if_match ${exec date +"%I"} == 8}${color}${else}${color1}${endif}E I G H T ${if_match ${exec date +"%I"} == 11}${color}${else}${color1}${endif}E L E V E N
+${if_match ${exec date +"%I"} == 7}${color}${else}${color1}${endif}S E V E N ${if_match ${exec date +"%I"} == 12}${color}${else}${color1}${endif}T W E L V E
+${if_match ${exec date +"%I"} == 10}${color}${else}${color1}${endif}T E N ${else}${if_match ${exec date +"%I"} == 8}${color}${else}${color1}${endif}N I N E
+${if_match ${exec date +"%I"} == 12}${color}${else}${color1}${endif}O N E ${if_match ${exec date +"%I"} == 5}${color}${else}${color1}${endif}S I X ${if_match ${exec date +"%I"} == 2}${color}${else}${color1}${endif}T H R E E
+${if_match ${exec date +"%I"} == 3}${color}${else}${color1}${endif}F O U R ${if_match ${exec date +"%I"} == 4}${color}${else}${color1}${endif}F I V E ${if_match ${exec date +"%I"} == 1}${color}${else}${color1}${endif}T W O
+${if_match ${exec date +"%I"} == 7}${color}${else}${color1}${endif}E I G H T${if_match ${exec date +"%I"} == 10}${color}${else}${color1}${endif} E L E V E N
+${if_match ${exec date +"%I"} == 6}${color}${else}${color1}${endif}S E V E N${if_match ${exec date +"%I"} == 11}${color}${else}${color1}${endif} T W E L V E
+${if_match ${exec date +"%I"} == 9}${color}${else}${color1}${endif}T E N ${endif}${color1}S E ${if_match ${exec date +"%M"} < 5}${color}${endif}O C L O C K
+${color}${if_running mocp}${font Sans-Serif:bold:size=8}MUSIC ${hr 2}
+${font Sans-Serif:normal:size=8}${execi 10 mocp -Q '%song\n%artist\n%album'}
+${execbar mocp -Q '%cs/%ts*100' | bc -l}
+${endif}
+
+
+#${image ~/.2164.png -p 65,270 -s 100x100}
+
+
+${color1}${font Sans-Serif:bold:size=12}Host:${alignr}$nodename
+OS:${alignr}Arch Linux
+DE/WM:${alignr}Gnome
+Kernel:${alignr}$kernel
+Freq:$alignr${freq_g}GHz
+${hr 2}
+CPU:$alignr${cpu cpu0}%
+#CPU1:${cpu cpu}%${alignr}CPU2:$alignr${cpu cpu2}%
+#CPU3:${cpu cpu3}%${alignr}CPU4:$alignr${cpu cpu4}%
+#CPU5:${cpu cpu5}%${alignr}CPU6:$alignr${cpu cpu6}%
+#CPU7:${cpu cpu7}%${alignr}CPU8:$alignr${cpu cpu8}%
+RAM:$alignr${mem}/${memmax}
+SWAP:$alignr$swap/$swapmax
+HD:$alignr${fs_used /home/}/${fs_size /home/}
+Uptime:$alignr${uptime}
+${hr 2}
+IP:$alignr${addr wlan0}
+BitRate:$alignr${wireless_bitrate wlan0}
+${hr 2}
+U/L Speed:$alignr${upspeed wlan0}
+D/L Speed:$alignr${downspeed wlan0}
+${hr 2}
