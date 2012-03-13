@@ -1,0 +1,12 @@
+-- INTRO --
+Zanty's amazing conky config.
+Well not really. I just started playing around with it pretty recently.
+This script was mostly taken from the crunchbang forum with a few simple
+additions by yours truly.
+
+-- FILES --
+CurrentConky    - This is the config I currently have
+
+--Directories --
+lua/            - This is where any supporting lua scripts go
+res/            - This is where any additional resources go
