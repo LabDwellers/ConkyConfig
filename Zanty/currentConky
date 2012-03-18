@@ -17,13 +17,14 @@
 background yes
 use_xft yes
 xftfont Sans-Serif:size=12
-xftalpha 1
+xftalpha 0
 update_interval 1.0
 total_run_times 0
-own_window 1
+own_window yes
 own_window_transparent yes
 own_window_type desktop
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual 1
 double_buffer yes
 minimum_size 200 200
 maximum_width 480
@@ -91,6 +92,7 @@ ${hr 2}
 IP:$alignr${addr wlan0}
 BitRate:$alignr${wireless_bitrate wlan0}
 ${hr 2}
-U/L Speed:$alignr${upspeed wlan0}
-D/L Speed:$alignr${downspeed wlan0}
+U/L Speed:$alignr${upspeed wlan0} | ${totalup wlan0}
+D/L Speed:$alignr${downspeed wlan0} | ${totaldown wlan0}
 ${hr 2}
+$conky_build_arch
