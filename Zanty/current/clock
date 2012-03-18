@@ -1,19 +1,4 @@
-# conky configuration
-#
-# The list of variables has been removed from this file in favour
-# of keeping the documentation more maintainable.
-# Check http://conky.sf.net for an up-to-date-list.
-#
-# For ideas about how to modify conky, please see:
-# http://crunchbanglinux.org/forums/topic/59/my-conky-config/
-#
-# For help with conky, please see:
-# http://crunchbanglinux.org/forums/topic/2047/conky-help/
-#
-# Enjoy! :)
-##############################################
-#  Settings
-##############################################
+# Just to put the clock in the top middle
 background yes
 use_xft yes
 xftfont Sans-Serif:size=12
@@ -27,7 +12,6 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 own_window_argb_visual 1
 double_buffer yes
 minimum_size 200 200
-maximum_width 480
 draw_shades no
 draw_outline no
 draw_borders no
@@ -35,8 +19,8 @@ draw_graph_borders yes
 default_color white
 #default_shade_color black
 default_outline_color white
-alignment middle_right
-gap_x 30
+alignment tm
+gap_x -115
 gap_y 20
 no_buffers yes
 uppercase no
@@ -70,29 +54,3 @@ ${execbar mocp -Q '%cs/%ts*100' | bc -l}
 ${endif}
 
 
-#${image ~/.2164.png -p 65,270 -s 100x100}
-
-
-${color1}${font Sans-Serif:bold:size=12}Host:${alignr}$nodename
-OS:${alignr}Arch Linux
-DE/WM:${alignr}Gnome
-Kernel:${alignr}$kernel
-Freq:$alignr${freq_g}GHz
-${hr 2}
-CPU:$alignr${cpu cpu0}%
-#CPU1:${cpu cpu}%${alignr}CPU2:$alignr${cpu cpu2}%
-#CPU3:${cpu cpu3}%${alignr}CPU4:$alignr${cpu cpu4}%
-#CPU5:${cpu cpu5}%${alignr}CPU6:$alignr${cpu cpu6}%
-#CPU7:${cpu cpu7}%${alignr}CPU8:$alignr${cpu cpu8}%
-RAM:$alignr${mem}/${memmax}
-SWAP:$alignr$swap/$swapmax
-HD:$alignr${fs_used /home/}/${fs_size /home/}
-Uptime:$alignr${uptime}
-${hr 2}
-IP:$alignr${addr wlan0}
-BitRate:$alignr${wireless_bitrate wlan0}
-${hr 2}
-U/L Speed:$alignr${upspeed wlan0} | ${totalup wlan0}
-D/L Speed:$alignr${downspeed wlan0} | ${totaldown wlan0}
-${hr 2}
-$conky_build_arch
