@@ -1,0 +1,5 @@
+Taki's custom Conky configurations.
+
+current/ - Contains any Conky configs I am currently using
+lua/ - Contains any lua scripts that may be used
+res/ - COntains any additional resources(ie images) that may be used
