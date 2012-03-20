@@ -39,7 +39,7 @@ use_xft yes
 xftfont DejaVu Sans Mono:size=12
 gap_x 5
 gap_y 29
-minimum_size 5 5
+minimum_size 5 700
 net_avg_samples 2
 no_buffers no
 out_to_console no
@@ -58,6 +58,9 @@ use_spacer none
 show_graph_scale no
 show_graph_range no
 
+lua_load ./.lua/ring.lua
+lua_draw_hook_pre ring
+lua_draw_hook_post cairo_cleanup
 TEXT
 ${scroll 32 $nodename - $sysname $kernel on $machine |}
 $hr
