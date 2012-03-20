@@ -20,27 +20,36 @@ gap_x 20
 gap_y 40
 
 # General options
-background 0
+background 1
 update_interval 1.0
 total_run_times 0
 uppercase 0
 
+# Graphs
+#draw_graph_borders 0
+#show_graph_range 0
+#show_graph_scale 1
 
-# Fonts and colors
+# Styling
 color1 222222
 use_xft 1
 xftfont Monospace:size=14
 xftalpha 0
+
 
 ################################################################################
 # OUTPUT
 TEXT
 ${color1}${font Monospace:bold:size=14}Host: ${nodename}${tab 100 350}Uptime    : ${alignr}$uptime
 ${hr 2}
-CPU : ${cpu cpu0}%${tab 40 30}@ ${freq_g}GHz${tab 30 250}root/     : ${alignr}${fs_used_perc /}%/${fs_size /}
+CPU : ${freq_g}GHz/1.73GHz${tab 30 40}${cpubar cpu0 10,250}$alignr${cpu cpu0}%
+RAM : ${mem}/${memmax}${tab 30 40}${membar 10,250}$alignr$memperc%
+SWP : ${swap}/${swapmax}${tab 30 40}${swapbar 10,250}$alignr$swapperc%
 ${hr 2}
 IP  : ${addr wlan0}${tab 50 250}BitRate   :${alignr}${wireless_bitrate wlan0}
 U/L : ${upspeed wlan0}${tab 100 350}Total U/L :${alignr}${totalup wlan0}
+#${upspeedgraph wlan0 50 -l -t}
 D/L : ${downspeed wlan0}${tab 100 350}Total D/L :${alignr}${totaldown wlan0}
+#${downspeedgraph wlan0 50 -l -t}
 ${hr 2}
 $alignc$sysname $kernel $machine 
