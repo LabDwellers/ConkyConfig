@@ -1,0 +1,36 @@
+# Window options
+own_window 1
+own_window_transparent 1
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual 1
+double_buffer 1
+no_buffers 1
+draw_shades 0
+draw_outline 0
+# Alignment and size
+alignment tr
+minimum_size 500 400
+gap_x 20
+gap_y 40
+# General options
+background 0
+update_interval 1.0
+total_run_times 0
+uppercase 0
+# Fonts and colors
+color1 222222
+use_xft 1
+xftfont Monospace:size=14
+xftalpha 0
+
+TEXT
+${color1}${font Monospace:bold:size=14}Host:$alignr$nodename
+${hr 2}
+IP:$alignr${addr wlan0}
+BitRate:$alignr${wireless_bitrate wlan0}
+${hr 2}
+U/L : ${upspeed wlan0}  ${alignr 45}Total U/L : ${alignr}${totalup wlan0}
+D/L : ${downspeed wlan0}${alignr 45}Total D/L :${alignr}${totaldown wlan0}
+${hr 2}
+$alignc$conky_build_arch
