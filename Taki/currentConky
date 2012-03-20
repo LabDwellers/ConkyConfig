@@ -63,11 +63,7 @@ ${scroll 32 $nodename - $sysname $kernel on $machine |}
 $hr
 ${color green}Uptime: $uptime
 ${color lightgreen}Frequency (in GHz): $freq_g
-<<<<<<< HEAD
-${color red}RAM Usage: ${mem}/$memmax - $memperc% ${membar 4}
-=======
 ${color red}RAM Usage: $cached/$memmax - $memperc% ${membar 4}
->>>>>>> Taki-Dev
 ${color darkred}Swap Usage: $swap/$swapmax - $swapperc% ${swapbar 4}
 ${color yellow}CPU Usage:$color $cpu% ${cpubar 4}
 ${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
