@@ -34,7 +34,7 @@ draw_graph_borders yes
 default_color white
 #default_shade_color black
 default_outline_color white
-alignment middle_right
+alignment top_right
 gap_x 30
 gap_y 20
 no_buffers yes
