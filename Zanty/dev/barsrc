@@ -1,5 +1,6 @@
-# 
-# 
+# My first conky configuration written from scratch. A special thank you to 
+# all the forums dedicated to sharing conky configs. ArchLinux, CrunchBang 
+# were the two I looked through the most for ideas
 # 
 # Window options
 own_window 1
