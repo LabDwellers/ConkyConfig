@@ -58,7 +58,7 @@ use_spacer none
 show_graph_scale no
 show_graph_range no
 
-lua_load ./.lua/ring.lua
+lua_load ~/git/ConkyConfig/Taki/lua/ring.lua
 lua_draw_hook_pre ring
 lua_draw_hook_post cairo_cleanup
 TEXT
