@@ -1,3 +1,6 @@
+# 
+# 
+# 
 # Window options
 own_window 1
 own_window_transparent 1
@@ -21,6 +24,7 @@ update_interval 1.0
 total_run_times 0
 uppercase 0
 
+
 # Fonts and colors
 color1 222222
 use_xft 1
@@ -30,10 +34,12 @@ xftalpha 0
 ################################################################################
 # OUTPUT
 TEXT
-${color1}${font Monospace:bold:size=14}Host:$alignr$nodename
+${color1}${font Monospace:bold:size=14}Host: ${nodename}${tab 100 350}Uptime    : ${alignr}$uptime
+${hr 2}
+CPU : ${cpu cpu0}%${tab 40 30}@ ${freq_g}GHz${tab 30 250}root/     : ${alignr}${fs_used_perc /}%/${fs_size /}
 ${hr 2}
 IP  : ${addr wlan0}${tab 50 250}BitRate   :${alignr}${wireless_bitrate wlan0}
 U/L : ${upspeed wlan0}${tab 100 350}Total U/L :${alignr}${totalup wlan0}
 D/L : ${downspeed wlan0}${tab 100 350}Total D/L :${alignr}${totaldown wlan0}
 ${hr 2}
-$alignc$kernel
+$alignc$sysname $kernel $machine 
