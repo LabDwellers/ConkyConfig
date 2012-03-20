@@ -15,7 +15,7 @@ draw_outline 0
 
 # Alignment and size
 alignment tr
-minimum_size 500 400
+minimum_size 800 
 gap_x 20
 gap_y 40
 
@@ -40,16 +40,16 @@ xftalpha 0
 ################################################################################
 # OUTPUT
 TEXT
-${color1}${font Monospace:bold:size=14}Host: ${nodename}${tab 100 350}Uptime    : ${alignr}$uptime
+${color1}${font Monospace:bold:size=14}Host: ${nodename}${tab 100 350}Uptime    : $uptime${alignr}
 ${hr 2}
-CPU : ${freq_g}GHz/1.73GHz${tab 30 40}${cpubar cpu0 10,250}$alignr${cpu cpu0}%
-RAM : ${mem}/${memmax}${tab 30 40}${membar 10,250}$alignr$memperc%
-SWP : ${swap}/${swapmax}${tab 30 40}${swapbar 10,250}$alignr$swapperc%
+CPU : ${freq_g}GHz/1.73GHz${tab 30 40}${cpubar cpu0 10,500}$alignr${cpu cpu0}%
+RAM : ${mem}/${memmax}${tab 30 40}${membar 10,500}$alignr$memperc%
+SWP : ${swap}/${swapmax}${tab 30 40}${swapbar 10,500}$alignr$swapperc%
 ${hr 2}
-IP  : ${addr wlan0}${tab 50 250}BitRate   :${alignr}${wireless_bitrate wlan0}
+IP  : ${addr wlan0}${tab 50 200}BitRate   :${alignr}${wireless_bitrate wlan0}
 U/L : ${upspeed wlan0}${tab 100 350}Total U/L :${alignr}${totalup wlan0}
 #${upspeedgraph wlan0 50 -l -t}
 D/L : ${downspeed wlan0}${tab 100 350}Total D/L :${alignr}${totaldown wlan0}
 #${downspeedgraph wlan0 50 -l -t}
 ${hr 2}
-$alignc$sysname $kernel $machine 
+${alignc}Arch $sysname $kernel $machine 
