@@ -12,16 +12,19 @@ function conky_ring(width, radius, colorR, colorG, colorB, colorA, start, perc)
 	cr = cairo_create(cs)
 	cairo_set_line_width (cr, width)
 	cairo_set_source_rgba (cr, colorR, colorG, colorB, colorA)
-	cairo_arc (cr, 200, 500, radius, start, perc*2*math.pi+start)
+	cairo_arc (cr, radius+(width/2), radius+(width/2), radius, start, perc*2*math.pi+start)
 	cairo_stroke(cr)
 end
 
 -- Memory ring
-function conky_mem()
+function conky_mem(x)
 	local starting_point = 3*math.pi / 2
-	conky_ring(10, 116, 0.15, 0.43, 0.5, 1.0, starting_point, tonumber(conky_parse("${memperc}"))/100)
+	conky_ring(10, (tonumber(x)-10)/2, 0.15, 0.43, 0.5, 1.0, starting_point, tonumber(conky_parse("${memperc}"))/100)
 end
 
+function conky_netup(x)
+	local starting_point = 3*math.pi / 2
+end
 -- Cleanup
 function conky_cairo_cleanup()
 	cairo_surface_destroy(cs)
