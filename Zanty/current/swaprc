@@ -1,0 +1,36 @@
+# Only draw a box holding the Ring
+# Window options
+own_window 1
+own_window_transparent 1
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual 1
+double_buffer 1
+no_buffers 1
+draw_shades 0
+draw_outline 0
+
+# Alignment and size
+alignment tr
+minimum_size 100 100
+gap_x 300
+gap_y 100
+
+# General options
+background 1
+update_interval 1.0
+total_run_times 0
+
+# Styling
+color1 656565
+use_xft 1
+xftfont Monospace:size=6
+xftalpha 0
+
+lua_load ~/.conky/lua/rings1.lua
+lua_draw_hook_pre swap 100
+lua_draw_hook_post cairo_cleanup
+TEXT
+${color1}${voffset 20}${font Monospace:bold:size=8}${offset 30}SWAP
+${voffset 10}${offset 39}${swapperc}%
+${voffset 10}${font Monospace:bold:size=8}${offset 23}${swap}
