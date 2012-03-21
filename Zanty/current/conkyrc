@@ -36,9 +36,6 @@ use_xft 1
 xftfont Monospace:size=14
 xftalpha 0
 
-lua_load ~/.conky/lua/rings1.lua
-lua_draw_hook_pre mem
-lua_draw_hook_post cairo_cleanup
 ################################################################################
 # OUTPUT
 TEXT
