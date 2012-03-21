@@ -1,0 +1,52 @@
+# My first conky configuration written from scratch. A special thank you to 
+# all the forums dedicated to sharing conky configs. ArchLinux, CrunchBang 
+# were the two I looked through the most for ideas
+# 
+# Window options
+own_window 1
+own_window_transparent 1
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual 1
+double_buffer 1
+no_buffers 1
+draw_shades 0
+draw_outline 0
+
+# Alignment and size
+alignment br
+minimum_size 500
+gap_x 20
+gap_y 40
+
+# General options
+background 1
+update_interval 1.0
+total_run_times 0
+uppercase 0
+
+# Graphs
+draw_graph_borders 0
+show_graph_range 0
+show_graph_scale 1
+
+# Styling
+color1 656565
+use_xft 1
+xftfont Monospace:size=14
+xftalpha 0
+
+################################################################################
+# OUTPUT
+TEXT
+${color1}${font Monospace:size=14}Host: ${nodename}${tab 100 350}Uptime    : $uptime${alignr}
+${hr 2}
+IP  : ${addr wlan0}${tab 50 200}BitRate   :${alignr}${wireless_bitrate wlan0}
+${hr 2}
+U/L : ${upspeed wlan0}${tab 100 350}Total U/L :${alignr}${totalup wlan0}
+${upspeedgraph wlan0 75}
+${hr 2}
+D/L : ${downspeed wlan0}${tab 100 350}Total D/L :${alignr}${totaldown wlan0}
+${downspeedgraph wlan0 75}
+${hr 2}
+${alignc}Arch $sysname $kernel $machine 

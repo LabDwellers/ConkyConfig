@@ -37,7 +37,7 @@ draw_outline no
 draw_shades no
 use_xft yes
 xftfont DejaVu Sans Mono:size=12
-gap_x 990
+gap_x 5
 gap_y 29
 minimum_size 5 5
 net_avg_samples 2
@@ -47,10 +47,10 @@ out_to_stderr no
 extra_newline no
 own_window yes
 own_window_class Conky
-own_window_hints below sticky
+own_window_hints below sticky skip_taskbar skip_pager undecorated
 own_window_argb_visual yes
-own_window_argb_value 0
-own_window_type dock
+own_window_argb_value 0 
+own_window_type normal
 stippled_borders 0
 update_interval 1.0
 uppercase no
@@ -58,14 +58,18 @@ use_spacer none
 show_graph_scale no
 show_graph_range no
 
+
+#lua_load ~/git/ConkyConfig/Taki/lua/ring.lua
+#lua_draw_hook_pre clock 200 500
+#lua_draw_hook_post cairo_cleanup
 TEXT
 ${scroll 32 $nodename - $sysname $kernel on $machine |}
 $hr
 ${color green}Uptime: $uptime
 ${color lightgreen}Frequency (in GHz): $freq_g
-${color red}RAM Usage: $mem/$memmax - $memperc% ${membar 4}
-${color darkred}Swap Usage: $swap/$swapmax - $swapperc% ${swapbar 4}
-${color yellow}CPU Usage:$color $cpu% ${cpubar 4}
+${color red}RAM Usage: $cached/$memmax - $memperc% ${alignr 2}${membar 4, 40}
+${color darkred}Swap Usage: $swap/$swapmax - $swapperc% ${alignr 2}${swapbar 4, 90}
+${color yellow}CPU Usage:$color $cpu% ${alignr 2}${cpubar 4, 220}
 ${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
 $hr
 ${color grey}File systems:
@@ -77,3 +81,12 @@ ${color grey}Name              PID   CPU%   MEM%
 ${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
 ${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
 ${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+$hr
+#
+#
+#
+#
+#
+#
+#${alignc}  ${time %a,%B %d}
+#${alignc}  ${time %H:%M}
