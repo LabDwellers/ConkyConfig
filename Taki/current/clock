@@ -26,7 +26,7 @@
 alignment tr
 background yes
 border_width 1
-cpu_avg_samples 2
+cpu_avg_samples 1
 default_color white
 default_outline_color white
 default_shade_color white
@@ -37,10 +37,10 @@ draw_outline no
 draw_shades no
 use_xft yes
 xftfont DejaVu Sans Mono:size=12
-gap_x 5
-gap_y 29
-minimum_size 5 5
-net_avg_samples 2
+gap_x 60
+gap_y 400
+minimum_size 248 248
+net_avg_samples 1
 no_buffers no
 out_to_console no
 out_to_stderr no
@@ -52,41 +52,22 @@ own_window_argb_visual yes
 own_window_argb_value 0 
 own_window_type normal
 stippled_borders 0
-update_interval 1.0
+update_interval 1
 uppercase no
 use_spacer none
 show_graph_scale no
 show_graph_range no
 
 
-#lua_load ~/git/ConkyConfig/Taki/lua/ring.lua
-#lua_draw_hook_pre clock 200 500
-#lua_draw_hook_post cairo_cleanup
+lua_load ~/git/ConkyConfig/Taki/lua/ring.lua
+lua_draw_hook_pre clock 124 124 1
+lua_draw_hook_post cairo_cleanup
 TEXT
-${scroll 32 $nodename - $sysname $kernel on $machine |}
-$hr
-${color green}Uptime: $uptime
-${color lightgreen}Frequency (in GHz): $freq_g
-${color red}RAM Usage: $cached/$memmax - $memperc% ${alignr 2}${membar 4, 40}
-${color darkred}Swap Usage: $swap/$swapmax - $swapperc% ${alignr 2}${swapbar 4, 90}
-${color yellow}CPU Usage:$color $cpu% ${alignr 2}${cpubar 4, 220}
-${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
-$hr
-${color grey}File systems:
- / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
-${color grey}Networking:
-Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
-$hr
-${color grey}Name              PID   CPU%   MEM%
-${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
-${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
-${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
-$hr
-#
-#
-#
-#
-#
-#
-#${alignc}  ${time %a,%B %d}
-#${alignc}  ${time %H:%M}
+
+
+
+
+
+
+${alignc 12}  ${time %a,%B %d}
+${alignc 12}  ${time %H:%M}
