@@ -1,0 +1,3 @@
+#!/bin/zsh
+/usr/bin/conky -c ~/.conky/conkyrc;
+/usr/bin/conky -c ~/.conky/memring;
