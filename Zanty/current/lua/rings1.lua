@@ -48,9 +48,15 @@ function conky_swap(x)
 	conky_ring(3, (tonumber(x)-3)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
 end
 
+function conky_cpu(x)
+	local starting_point = 3*math.pi / 2
+	conky_ring(6, (tonumber(x)-6)/2, 0.96, 0.01, 0.23, 1.0, starting_point, tonumber(conky_parse("${cpu cpu0}"))/100)
+	conky_ring(6, (tonumber(x)-6)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
+end
+
 function conky_core1(x)
 	local starting_point = 3*math.pi / 2
-	conky_ring(3, (tonumber(x)-3)/2, 0.64, 0.95, 0.14, 1.0, starting_point, tonumber(conky_parse("${cpu cpu5}"))/100)
+	conky_ring(3, (tonumber(x)-3)/2, 1, 0.61, 0.01, 1.0, starting_point, tonumber(conky_parse("${cpu cpu5}"))/100)
 	conky_ring(3, (tonumber(x)-3)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
 	
 	conky_circle(3, ((tonumber(conky_parse("${cpu cpu1}")))/100)*(((tonumber(x)-3)/2) - 3), 0.56, 0.01, 0.99, 1.0, starting_point, 1, x)
@@ -59,7 +65,7 @@ end
 
 function conky_core2(x)
 	local starting_point = 3*math.pi / 2
-	conky_ring(3, (tonumber(x)-3)/2, 0.64, 0.95, 0.14, 1.0, starting_point, tonumber(conky_parse("${cpu cpu6}"))/100)
+	conky_ring(3, (tonumber(x)-3)/2, 1, 0.61, 0.01, 1.0, starting_point, tonumber(conky_parse("${cpu cpu6}"))/100)
 	conky_ring(3, (tonumber(x)-3)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
 	
 	conky_circle(3, ((tonumber(conky_parse("${cpu cpu2}")))/100)*(((tonumber(x)-3)/2) - 3), 0.56, 0.01, 0.99, 1.0, starting_point, 1, x)
@@ -68,7 +74,7 @@ end
 
 function conky_core3(x)
 	local starting_point = 3*math.pi / 2
-	conky_ring(3, (tonumber(x)-3)/2, 0.64, 0.95, 0.14, 1.0, starting_point, tonumber(conky_parse("${cpu cpu7}"))/100)
+	conky_ring(3, (tonumber(x)-3)/2, 1, 0.61, 0.01, 1.0, starting_point, tonumber(conky_parse("${cpu cpu7}"))/100)
 	conky_ring(3, (tonumber(x)-3)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
 	
 	conky_circle(3, ((tonumber(conky_parse("${cpu cpu3}")))/100)*(((tonumber(x)-3)/2) - 3), 0.56, 0.01, 0.99, 1.0, starting_point, 1, x)
@@ -77,7 +83,7 @@ end
 
 function conky_core4(x)
 	local starting_point = 3*math.pi / 2
-	conky_ring(3, (tonumber(x)-3)/2, 0.64, 0.95, 0.14, 1.0, starting_point, tonumber(conky_parse("${cpu cpu8}"))/100)
+	conky_ring(3, (tonumber(x)-3)/2, 1, 0.61, 0.01, 1.0, starting_point, tonumber(conky_parse("${cpu cpu8}"))/100)
 	conky_ring(3, (tonumber(x)-3)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
 	
 	conky_circle(3, ((tonumber(conky_parse("${cpu cpu4}")))/100)*(((tonumber(x)-3)/2) - 3), 0.56, 0.01, 0.99, 1.0, starting_point, 1, x)
