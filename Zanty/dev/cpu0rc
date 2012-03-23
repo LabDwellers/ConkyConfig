@@ -31,4 +31,4 @@ lua_load ~/workspace/git/ConkyConfig/Zanty/dev/lua/rings1.lua
 lua_draw_hook_pre cpu 225
 lua_draw_hook_post cairo_cleanup
 TEXT
-${voffset 145}${offset 65}CPU : ${cpu cpu0}%
+${color1}${voffset 145}${offset 65}CPU : ${cpu cpu0}%

@@ -43,10 +43,10 @@ ${color1}${font Monospace:size=14}Host: ${nodename}${tab 100 350}Uptime    : $up
 ${hr 2}
 IP  : ${addr wlan0}${tab 50 200}BitRate   :${alignr}${wireless_bitrate wlan0}
 ${hr 2}
-U/L : ${upspeed wlan0}${tab 100 350}Total U/L :${alignr}${totalup wlan0}
-${upspeedgraph wlan0 75}
-${hr 2}
-D/L : ${downspeed wlan0}${tab 100 350}Total D/L :${alignr}${totaldown wlan0}
-${downspeedgraph wlan0 75}
-${hr 2}
-${alignc}Arch $sysname $kernel $machine 
+#U/L : ${upspeed wlan0}${tab 100 350}Total U/L :${alignr}${totalup wlan0}
+#${upspeedgraph wlan0 75}
+#${hr 2}
+#D/L : ${downspeed wlan0}${tab 100 350}Total D/L :${alignr}${totaldown wlan0}
+#${downspeedgraph wlan0 75}
+#${hr 2}
+#${alignc}Arch $sysname $kernel $machine 
