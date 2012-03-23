@@ -32,4 +32,5 @@ lua_draw_hook_pre swap 100
 lua_draw_hook_post cairo_cleanup
 TEXT
 ${color1}${voffset 20}${font Monospace:bold:size=8}${offset 30}SWAP
-${voffset 20}${font Monospace:bold:size=8}${offset 23}${swap}
+${voffset 10}${offset 39}${swapperc}%
+${voffset 10}${font Monospace:bold:size=8}${offset 23}${swap}

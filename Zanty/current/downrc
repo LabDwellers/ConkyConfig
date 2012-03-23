@@ -12,9 +12,9 @@ draw_outline 0
 
 # Alignment and size
 alignment tr
-minimum_size 400 400
-gap_x 20
-gap_y 40
+minimum_size 230 230
+gap_x 300
+gap_y 100
 
 # General options
 background 1
@@ -24,13 +24,11 @@ total_run_times 0
 # Styling
 color1 656565
 use_xft 1
+xftfont Monospace:size=6
 xftalpha 0
 
 lua_load ~/.conky/lua/rings1.lua
-lua_draw_hook_pre mem 400
+lua_draw_hook_pre network 0 230
 lua_draw_hook_post cairo_cleanup
-
 TEXT
-${color1}${font Monospace:bold:size=25}${voffset 45}${alignc}RAM
-${voffset 90}${alignc}${font Monospace:bold:size=25}${memperc}%
-${voffset 60}${font Monospace:bold:size=15}${alignc}${mem}/${memmax}
+LOL

@@ -1,2 +1,9 @@
-#!/bin/zsh
-/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/memrc && /usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zandy/dev/swaprc;
+#!/bin/bash
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/conkyrc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/memrc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/swaprc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/cpu0rc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/cpu15rc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/cpu26rc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/cpu37rc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/cpu48rc;
