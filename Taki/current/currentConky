@@ -66,7 +66,7 @@ TEXT
 ${scroll 32 $nodename - $sysname $kernel on $machine |}
 $hr
 ${color green}Uptime: $uptime
-${color lightgreen}Frequency (in GHz): $freq_g
+${color lightgreen}Frequency (in GHz): ${freq_g cpu1} ${freq_g cpu2}
 ${color red}RAM Usage: $cached/$memmax - $memperc% ${alignr 2}${membar 4, 40}
 ${color darkred}Swap Usage: $swap/$swapmax - $swapperc% ${alignr 2}${swapbar 4, 90}
 ${color yellow}CPU Usage:$color $cpu% ${alignr 2}${cpubar 4, 220}

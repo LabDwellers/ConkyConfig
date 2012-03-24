@@ -32,3 +32,4 @@ lua_draw_hook_pre core3 125
 lua_draw_hook_post cairo_cleanup
 TEXT
 ${offset 37}${voffset 30}Core 4
+${offset 45}${voffset 30}${freq_g cpu4}

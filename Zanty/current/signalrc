@@ -12,24 +12,23 @@ draw_outline 0
 
 # Alignment and size
 alignment tr
-minimum_size 125 125
-gap_x 800
-gap_y 35
+minimum_size 75 75
+gap_x 10
+gap_y 430
 
 # General options
 background 1
-update_interval 1.0
+update_interval 5.0
 total_run_times 0
 
 # Styling
 color1 656565
 use_xft 1
-xftfont Monospace:size=8
+xftfont Monospace:size=10
 xftalpha 0
 
-lua_load ~/workspace/git/ConkyConfig/Zanty/dev/lua/rings1.lua
-lua_draw_hook_pre core1 125
+lua_load ~/.conky/lua/rings1.lua
+lua_draw_hook_pre wireless_strength 75
 lua_draw_hook_post cairo_cleanup
 TEXT
-${offset 37}${voffset 30}Core 1
-${offset 45}${voffset 30}${freq_g cpu1}
+${voffset 25}${offset 22}${color1}${wireless_link_qual_perc wlan0}%

@@ -12,9 +12,9 @@ draw_outline 0
 
 # Alignment and size
 alignment tr
-minimum_size 125 125
-gap_x 800
-gap_y 35
+minimum_size 225 225
+gap_x 325
+gap_y 235
 
 # General options
 background 1
@@ -24,12 +24,11 @@ total_run_times 0
 # Styling
 color1 656565
 use_xft 1
-xftfont Monospace:size=8
+xftfont Monospace:size=14
 xftalpha 0
 
-lua_load ~/workspace/git/ConkyConfig/Zanty/dev/lua/rings1.lua
-lua_draw_hook_pre core1 125
+lua_load ~/.conky/lua/rings1.lua
+lua_draw_hook_pre cpu 225
 lua_draw_hook_post cairo_cleanup
 TEXT
-${offset 37}${voffset 30}Core 1
-${offset 45}${voffset 30}${freq_g cpu1}
+${color1}${voffset 145}${offset 65}CPU : ${cpu cpu0}%
