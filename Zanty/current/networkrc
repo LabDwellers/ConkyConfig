@@ -28,6 +28,6 @@ xftfont Monospace:size=14
 xftalpha 0
 
 lua_load ~/.conky/lua/rings1.lua
-lua_draw_hook_pre network 275
+lua_draw_hook_pre bandwidth 275
 lua_draw_hook_post cairo_cleanup
 TEXT

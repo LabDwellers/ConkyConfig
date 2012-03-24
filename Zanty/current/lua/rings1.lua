@@ -1,7 +1,7 @@
 -- Conky Lua Script
 -- A special thanks to:
 -- CrunchBang and ArchLinux forums for inspiration (along with many others)
--- Friend Sataki for being debugging buddy
+-- Friend Sataki for being debugging buddy 
 -- Zanterian 2012
 require 'cairo'
 function conky_ring(width, radius, colorR, colorG, colorB, colorA, start, perc)
@@ -104,41 +104,102 @@ function conky_core4(x)
 	conky_circle(3, ((tonumber(x)-3)/2) - 3, 0.43, 0.43, 0.43, 0.2, starting_point, 1, x)
 end
 
-function conky_network(x)
+function conky_bandwidth(x)
 	local starting_point = 3*math.pi / 2
 	local upload_speed = tonumber(conky_parse("${upspeedf wlan0}"))
 	local download_speed = tonumber(conky_parse("${downspeedf wlan0}"))
 	-- Time for percents
 	local upload_percent = 0
 	local download_percent = 0
+	
 	-- Color values
 	-- upload
+	-- foreground
 	local u_r = 0.015
 	local u_g = 0.999
 	local u_b = 0.592
-	-- download 0.96, 0.01, 0.23
+	-- background
+	local b_u_r = 0
+	local b_u_g = 0
+	local b_u_b = 0
+	local b_u_t = 0
+	-- download 
+	-- Foreground
 	local d_r = 0.96
 	local d_g = 0.01
 	local d_b = 0.23
+	-- Background
+	local b_d_r = 0
+	local b_d_g = 0
+	local b_d_b = 0
+	local b_d_t = 0
+	-- End color values
+	
 	-- Upload Speed conditions
 	if upload_speed < 100 then
 		upload_percent = upload_speed / 100
+		elseif upload_speed >= 100 and upload_speed < 1000 then
+			upload_percent = (upload_speed-100) / 900
+			b_u_r = u_r
+			b_u_g = u_g
+			b_u_b = u_b
+			b_u_t = 1
+			u_r = 1
+			u_g = 0.666
+			u_b = 0
+		elseif upload_speed >= 1000 and upload_speed < 10000 then
+			upload_percent = (upload_speed-1000) /9000 
+			b_u_r = u_r
+			b_u_g = u_g
+			b_u_b = u_b
+			b_u_t = 1
+			u_r = 1
+			u_g = 0
+			u_b = 0.666
 		else
 		upload_percent = 1
 	end
 	
-	if download_speed < 500 then
-		download_percent = download_speed / 500
-		else
+	-- Download Speed conditions 1, 0.61, 0.01
+	if download_speed < 100 then
+		download_percent = download_speed / 100
+	elseif download_speed > 100 and download_speed < 1000 then
+		download_percent = (download_speed-100) / 900
+		b_d_r = d_r
+		b_d_g = d_g
+		b_d_b = d_b
+		b_d_t = 1
+		d_r = 0
+		d_g = 1
+		d_b = 0
+	elseif download_speed > 1000 and download_speed < 10000 then
+		download_percent = (download_speed-1000)/9000
+		b_d_r = d_r
+		b_d_g = d_g
+		b_d_b = d_b
+		d_r = 0
+		d_g = 0
+		d_b = 1
+	else
 		download_percent = 1
 	end
 	
---	conky_circle(10, ((tonumber(conky_parse("${wireless_link_qual_perc wlan0}")))/100)*(((tonumber(x)-10)/2) - 10), 0.56, 0.01, 0.99, 1.0, starting_point, 1, x)
---	conky_circle(10, 1*(((tonumber(x)-10)/2) - 10), 0.43, 0.43, 0.43, 0.2, starting_point, 1, x)
-	
+	-- Grey background
 	conky_ring(5, (tonumber(x)-5)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
+	-- Upload Background
+	conky_ring(5, (tonumber(x)-5)/2, b_u_r, b_u_g, b_u_b, b_u_t, starting_point, 0.5)
+	-- Active
 	conky_ring(5, (tonumber(x)-5)/2, u_r, u_g, u_b, 1, starting_point, upload_percent/2)
+	-- Download Background
+	reverse_conky_ring(5, (tonumber(x)-5)/2, b_d_r, b_d_g, b_d_b, b_d_t, starting_point, 0.5)
+	-- Active
 	reverse_conky_ring(5, (tonumber(x)-5)/2, d_r, d_g, d_b, 1, starting_point, download_percent/2)
+end
+
+function conky_wireless_strength(x)
+	local starting_point = 3*math.pi / 2
+	conky_ring(3, (tonumber(x)-3)/2, 0.56, 0.01, 0.99, 1.0, starting_point, tonumber(conky_parse("${wireless_link_qual_perc wlan0}"))/100)
+	conky_ring(3, (tonumber(x)-3)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
 end
 
 -- Cleanup

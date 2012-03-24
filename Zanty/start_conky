@@ -3,6 +3,7 @@
 /usr/bin/conky -c  ~/.conky/memrc;
 /usr/bin/conky -c  ~/.conky/swaprc;
 /usr/bin/conky -c  ~/.conky/networkrc;
+/usr/bin/conky -c  ~/.conky/signalrc;
 /usr/bin/conky -c  ~/.conky/cpu0rc;
 /usr/bin/conky -c  ~/.conky/cpu15rc;
 /usr/bin/conky -c  ~/.conky/cpu26rc;
