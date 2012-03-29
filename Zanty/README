@@ -3,9 +3,13 @@ Zanty's configs. This is where all my files are on my computer. Please feel
 free to do whatever you want with them. 
 
 -- FILES --
-start_conky    - Script to get conky started
+start_conky     - Script to get conky started
 
---Directories --
+-- DIRECTORIES --
 archive/        - Configs I find online, have used in the past etc...
 current/        - This is the current conky configuration that I use
 dev/            - This is where any additional resources go
+
+-- CURRENT PROJECT --
+To develop script sets that will move elements to different parts without
+needing to edit the configuration files yourself. 
