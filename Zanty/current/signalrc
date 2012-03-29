@@ -13,7 +13,7 @@ draw_outline 0
 # Alignment and size
 alignment tr
 minimum_size 75 75
-gap_x 10
+gap_x 60
 gap_y 430
 
 # General options
