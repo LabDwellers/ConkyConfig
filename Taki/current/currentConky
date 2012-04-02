@@ -59,9 +59,6 @@ show_graph_scale no
 show_graph_range no
 
 
-#lua_load ~/git/ConkyConfig/Taki/lua/ring.lua
-#lua_draw_hook_pre clock 200 500
-#lua_draw_hook_post cairo_cleanup
 TEXT
 ${scroll 32 $nodename - $sysname $kernel on $machine |}
 $hr
