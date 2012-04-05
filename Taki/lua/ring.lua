@@ -18,7 +18,7 @@ do
 
     function conky_clock(xc, yc, interval)
 	    local start = 3*math.pi / 2
-        local time = os.date("%m %d %H %M %S")
+        local time = os.date("%m %d %H %M %S %C")
     	local seconds = tonumber(string.sub(time, 13,14))
 	    local cRed = 0.3
     	local cGreen = 0.86
@@ -56,8 +56,19 @@ do
         cRed = 0.0
         cGreen = 0.46
         cBlue = 0.38
+        local year = tonumber(string.sub(time, 16, 17))
+        local month = tonumber(string.sub(time, 1, 2))
     	local day = tonumber(string.sub(time, 4, 5)) + hours
-	    day = day / 31.0
+        if month == 2 then
+            if year % 4 == 0 then
+                day = day / 30.0
+            end
+            day = day / 29.0
+        elseif month == 4 or month == 6 or month == 9 or month == 11 then
+            day = day / 31.0
+        else
+            day = day / 32.0
+        end
     	conky_ring(4, xc, yc, 90, 0.46, 0.46, 0.46, 0.2, 0, 1)
 	    conky_ring(1, xc, yc, 88.5, cRed*.5, cGreen*.5, cBlue*.5, 1.0, start, day)
 	    conky_ring(2, xc, yc, 90, cRed, cGreen, cBlue, 1.0, start, day)
@@ -66,7 +77,7 @@ do
         cRed = 0.23
         cGreen = 0.63
         cBlue = 0.82
-	    local month = tonumber(string.sub(time, 1, 2)) + day
+	    month = month + day
     	month = month / 12.0
 	    conky_ring(10, xc, yc, 81, 0.82, 0.82, 0.82, 0.2, 0, 1)
     	conky_ring(1, xc, yc, 76.5, cRed*.5, cGreen*.5, cBlue*.5, 1.0, start, month)
@@ -74,12 +85,6 @@ do
     	conky_ring(6, xc, yc, 81, cRed, cGreen, cBlue, 1.0, start, month)
 	    conky_ring(1, xc, yc, 84.5, cRed*.75, cGreen*.75, cBlue*.75, 1.0, start, month)
     	conky_ring(1, xc, yc, 85.5, cRed*.5, cGreen*.5, cBlue*.5, 1.0, start, month)
-	    --Clock ring seperators
-    	--conky_ring(2, 115, 0.0, 0.0, 0.0, 1.0, 0, 1)
-	    --conky_ring(2, 101, 0.0, 0.0, 0.0, 1.0, 0, 1)
-    	--conky_ring(2, 93, 0.0, 0.0, 0.0, 1.0, 0, 1)
-	    --conky_ring(2, 87, 0.0, 0.0, 0.0, 1.0, 0, 1)
-    	--conky_ring(2, 75, 0.0, 0.0, 0.0, 1.0, 0, 1)
     end
 
     function conky_cairo_cleanup()
