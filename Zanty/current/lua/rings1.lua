@@ -148,7 +148,7 @@ function conky_bandwidth(x)
 			u_g = 0.666
 			u_b = 0
 		elseif upload_speed >= 1000 and upload_speed < 10000 then
-			upload_percent = (upload_speed-1000) /9000 
+			upload_percent = (upload_speed-1000) / 9000 
 			b_u_r = 1
 			b_u_g = 0.666
 			b_u_b = 0
@@ -173,7 +173,7 @@ function conky_bandwidth(x)
 		d_g = 1
 		d_b = 0
 	elseif download_speed > 1000 and download_speed < 10000 then
-		download_percent = (download_speed-1000)/9000
+		download_percent = (download_speed-1000) / 9000
 		b_d_r = 0
 		b_d_g = 1
 		b_d_b = 0
