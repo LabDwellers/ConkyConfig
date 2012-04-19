@@ -2,3 +2,8 @@ These scripts are eventually the plan to manage all of the conkyrc scripts
 in an easy to use interface that doesn't involve mucking through those
 scripts. It is also a way for me to explore making a front end to conky
 configuration files and have it become able to adapt to different screen sizes.
+
+-- CONTENTS --
+./setup     - Script to setup the configurations, and generate a start script
+./move.pl   - Script to move configurations on the screen different places
+./screen.pl - Script to optimize various screen sizes 
