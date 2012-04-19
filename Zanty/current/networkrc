@@ -2,7 +2,7 @@
 # Window options
 own_window 1
 own_window_transparent 1
-own_window_type desktop
+own_window_type normal
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 own_window_argb_visual 1
 double_buffer 1
@@ -27,7 +27,7 @@ use_xft 1
 xftfont Monospace:size=14
 xftalpha 0
 
-lua_load ~/.conky/lua/rings1.lua
+lua_load ./lua/rings1.lua
 lua_draw_hook_pre bandwidth 275
 lua_draw_hook_post cairo_cleanup
 TEXT

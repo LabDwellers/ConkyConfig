@@ -26,7 +26,7 @@ color1 656565
 use_xft 1
 xftalpha 0
 
-lua_load ~/workspace/git/ConkyConfig/Zanty/dev/lua/rings1.lua
+lua_load ./lua/rings1.lua
 lua_draw_hook_pre mem 400
 lua_draw_hook_post cairo_cleanup
 
