@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "Setting up conky";
+echo "${HOME}/.conky/ will be the conky configuration folder";
+echo "${HOME}/.start_conky will be the startup file";
+
