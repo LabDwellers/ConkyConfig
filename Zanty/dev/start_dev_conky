@@ -1,11 +1,11 @@
 #!/bin/bash
-/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/conkyrc;
-/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/memrc;
-/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/swaprc;
-/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/networkrc;
-/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/signalrc;
-/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/cpu0rc;
-/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/cpu15rc;
-/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/cpu26rc;
-/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/cpu37rc;
-/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/dev/cpu48rc;
+/usr/bin/conky -c  ./conkyrc;
+/usr/bin/conky -c  ./memrc;
+/usr/bin/conky -c  ./swaprc;
+/usr/bin/conky -c  ./networkrc;
+/usr/bin/conky -c  ./signalrc;
+/usr/bin/conky -c  ./cpu0rc;
+/usr/bin/conky -c  ./cpu15rc;
+/usr/bin/conky -c  ./cpu26rc;
+/usr/bin/conky -c  ./cpu37rc;
+/usr/bin/conky -c  ./cpu48rc;
