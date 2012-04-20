@@ -4,6 +4,7 @@ scripts. It is also a way for me to explore making a front end to conky
 configuration files and have it become able to adapt to different screen sizes.
 
 -- CONTENTS --
-./setup     - Script to setup the configurations, and generate a start script
+./setup     - Script to setup the configurations and generate a start script
+./uninstall - Script to uninstall the configurations and start script
 ./move.pl   - Script to move configurations on the screen different places
-./screen.pl - Script to optimize various screen sizes 
+./screen.pl - Script to optimize various screen sizes

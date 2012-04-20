@@ -2,4 +2,12 @@
 echo "Setting up conky";
 echo "${HOME}/.conky/ will be the conky configuration folder";
 echo "${HOME}/.start_conky will be the startup file";
-
+echo "Proceed with setup? (y/n)";
+read resp;
+if [ $resp == 'n' ]
+	then
+	echo "Setup aborted";
+	exit;
+fi;
+echo "Proceeding with setup";
+# Move The 
