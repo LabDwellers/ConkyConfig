@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 /usr/bin/conky -c  ~/.conky/conkyrc;
 /usr/bin/conky -c  ~/.conky/memrc;
 /usr/bin/conky -c  ~/.conky/swaprc;

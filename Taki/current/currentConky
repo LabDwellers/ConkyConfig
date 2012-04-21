@@ -50,7 +50,7 @@ own_window_class Conky
 own_window_hints below sticky skip_taskbar skip_pager undecorated
 own_window_argb_visual yes
 own_window_argb_value 0 
-own_window_type normal
+own_window_type desktop
 stippled_borders 0
 update_interval 1.0
 uppercase no
@@ -59,9 +59,6 @@ show_graph_scale no
 show_graph_range no
 
 
-#lua_load ~/git/ConkyConfig/Taki/lua/ring.lua
-#lua_draw_hook_pre clock 200 500
-#lua_draw_hook_post cairo_cleanup
 TEXT
 ${scroll 32 $nodename - $sysname $kernel on $machine |}
 $hr

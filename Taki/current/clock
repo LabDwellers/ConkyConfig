@@ -59,7 +59,7 @@ show_graph_scale no
 show_graph_range no
 
 
-lua_load ~/git/ConkyConfig/Taki/lua/ring.lua
+lua_load ../lua/ring.lua
 lua_draw_hook_pre clock 124 124 1
 lua_draw_hook_post cairo_cleanup
 TEXT
