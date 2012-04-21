@@ -1,7 +1,0 @@
-#!/bin/sh
-echo "Searching for script : ~/.start_conky"
-if [   ]
-	then
-	
-fi;
-
