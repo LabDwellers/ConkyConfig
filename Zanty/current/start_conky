@@ -1,11 +1,11 @@
 #!/bin/sh
-/usr/bin/conky -c  ~/.conky/conkyrc;
-/usr/bin/conky -c  ~/.conky/memrc;
-/usr/bin/conky -c  ~/.conky/swaprc;
-/usr/bin/conky -c  ~/.conky/networkrc;
-/usr/bin/conky -c  ~/.conky/signalrc;
-/usr/bin/conky -c  ~/.conky/cpu0rc;
-/usr/bin/conky -c  ~/.conky/cpu15rc;
-/usr/bin/conky -c  ~/.conky/cpu26rc;
-/usr/bin/conky -c  ~/.conky/cpu37rc;
-/usr/bin/conky -c  ~/.conky/cpu48rc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/current/conkyrc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/current/memrc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/current/swaprc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/current/networkrc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/current/signalrc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/current/cpu0rc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/current/cpu15rc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/current/cpu26rc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/current/cpu37rc;
+/usr/bin/conky -c  ~/workspace/git/ConkyConfig/Zanty/current/cpu48rc;
