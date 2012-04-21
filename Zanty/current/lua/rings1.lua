@@ -50,7 +50,6 @@ end
 -- Memory ring
 function conky_mem(x)
 	local starting_point = 3*math.pi / 2
-	-- Measurement Ring
 	conky_ring(10, (tonumber(x)-10)/2, 0.15, 0.43, 0.5, 1.0, starting_point, tonumber(conky_parse("${memperc}"))/100)
 	conky_ring(10, (tonumber(x)-10)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
 end
@@ -72,7 +71,6 @@ function conky_core1(x)
 	local starting_point = 3*math.pi / 2
 	conky_ring(3, (tonumber(x)-3)/2, 1, 0.61, 0.01, 1.0, starting_point, tonumber(conky_parse("${cpu cpu5}"))/100)
 	conky_ring(3, (tonumber(x)-3)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
-	
 	conky_circle(3, ((tonumber(conky_parse("${cpu cpu1}")))/100)*(((tonumber(x)-3)/2) - 3), 0.56, 0.01, 0.99, 1.0, starting_point, 1, x)
 	conky_circle(3, ((tonumber(x)-3)/2) - 3, 0.43, 0.43, 0.43, 0.2, starting_point, 1, x)
 end
@@ -81,7 +79,6 @@ function conky_core2(x)
 	local starting_point = 3*math.pi / 2
 	conky_ring(3, (tonumber(x)-3)/2, 1, 0.61, 0.01, 1.0, starting_point, tonumber(conky_parse("${cpu cpu6}"))/100)
 	conky_ring(3, (tonumber(x)-3)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
-	
 	conky_circle(3, ((tonumber(conky_parse("${cpu cpu2}")))/100)*(((tonumber(x)-3)/2) - 3), 0.56, 0.01, 0.99, 1.0, starting_point, 1, x)
 	conky_circle(3, ((tonumber(x)-3)/2) - 3, 0.43, 0.43, 0.43, 0.2, starting_point, 1, x)
 end
@@ -90,7 +87,6 @@ function conky_core3(x)
 	local starting_point = 3*math.pi / 2
 	conky_ring(3, (tonumber(x)-3)/2, 1, 0.61, 0.01, 1.0, starting_point, tonumber(conky_parse("${cpu cpu7}"))/100)
 	conky_ring(3, (tonumber(x)-3)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
-	
 	conky_circle(3, ((tonumber(conky_parse("${cpu cpu3}")))/100)*(((tonumber(x)-3)/2) - 3), 0.56, 0.01, 0.99, 1.0, starting_point, 1, x)
 	conky_circle(3, ((tonumber(x)-3)/2) - 3, 0.43, 0.43, 0.43, 0.2, starting_point, 1, x)
 end
@@ -99,7 +95,6 @@ function conky_core4(x)
 	local starting_point = 3*math.pi / 2
 	conky_ring(3, (tonumber(x)-3)/2, 1, 0.61, 0.01, 1.0, starting_point, tonumber(conky_parse("${cpu cpu8}"))/100)
 	conky_ring(3, (tonumber(x)-3)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
-	
 	conky_circle(3, ((tonumber(conky_parse("${cpu cpu4}")))/100)*(((tonumber(x)-3)/2) - 3), 0.56, 0.01, 0.99, 1.0, starting_point, 1, x)
 	conky_circle(3, ((tonumber(x)-3)/2) - 3, 0.43, 0.43, 0.43, 0.2, starting_point, 1, x)
 end
@@ -111,7 +106,6 @@ function conky_bandwidth(x)
 	-- Time for percents
 	local upload_percent = 0
 	local download_percent = 0
-	
 	-- Color values
 	-- upload
 	-- foreground
@@ -134,7 +128,6 @@ function conky_bandwidth(x)
 	local b_d_b = 0
 	local b_d_t = 0
 	-- End color values
-	
 	-- Upload Speed conditions
 	if upload_speed < 100 then
 		upload_percent = upload_speed / 100
@@ -148,7 +141,7 @@ function conky_bandwidth(x)
 			u_g = 0.666
 			u_b = 0
 		elseif upload_speed >= 1000 and upload_speed < 10000 then
-			upload_percent = (upload_speed-1000) / 9000 
+			upload_percent = (upload_speed-1000) /9000 
 			b_u_r = 1
 			b_u_g = 0.666
 			b_u_b = 0
@@ -157,34 +150,31 @@ function conky_bandwidth(x)
 			u_g = 0
 			u_b = 0.666
 		else
-		upload_percent = 1
+			upload_percent = 1
 	end
-	
 	-- Download Speed conditions 1, 0.61, 0.01
 	if download_speed < 100 then
 		download_percent = download_speed / 100
-	elseif download_speed > 100 and download_speed < 1000 then
-		download_percent = (download_speed-100) / 900
-		b_d_r = d_r
-		b_d_g = d_g
-		b_d_b = d_b
-		b_d_t = 1
-		d_r = 0
-		d_g = 1
-		d_b = 0
-	elseif download_speed > 1000 and download_speed < 10000 then
-		download_percent = (download_speed-1000) / 9000
-		b_d_r = 0
-		b_d_g = 1
-		b_d_b = 0
-		b_d_t = 1
-		d_r = 0
-		d_g = 0
-		d_b = 1
-	else
-		download_percent = 1
+		elseif download_speed > 100 and download_speed < 1000 then
+			download_percent = (download_speed-100) / 900
+			b_d_r = d_r
+			b_d_g = d_g
+			b_d_b = d_b
+			b_d_t = 1
+			d_r = 0
+			d_g = 1
+			d_b = 0
+		elseif download_speed > 1000 and download_speed < 10000 then
+			download_percent = (download_speed-1000)/9000
+			b_d_r = 0
+			b_d_g = 1
+			b_d_b = 0
+			d_r = 0
+			d_g = 0
+			d_b = 1
+		else
+			download_percent = 1
 	end
-	
 	-- Grey background
 	conky_ring(5, (tonumber(x)-5)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
 	-- Upload Background
@@ -203,8 +193,8 @@ function conky_wireless_strength(x)
 	conky_ring(3, (tonumber(x)-3)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
 end
 
--- Cleanup
 function conky_cairo_cleanup()
 	cairo_surface_destroy(cs)
 	cs = nil
 end
+
