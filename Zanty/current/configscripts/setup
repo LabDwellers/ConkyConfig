@@ -5,14 +5,13 @@
 # that many conky's seem hard to do.
 echo "Setting up conky in the current user's home directory";
 echo "${HOME}/.conky/ will be the conky configuration folder";
-echo "${HOME}/.start_conky will be the startup file";
-echo "---------------------------------------------";
+echo "----------------------------------------------------------------";
 echo "WARNING!! This script assumes that all of the conky scripts to";
 echo "be installed are in the parent directory !!";
-echo "---------------------------------------------";
+echo "----------------------------------------------------------------";
 echo "Proceed with setup? [y/n]";
 read resp;
-if [ $resp != 'y' ]
+if [ $resp != 'y' ] 
 	then
 	echo "Setup aborted";
 	exit;
@@ -21,4 +20,6 @@ echo "Proceeding with setup";
 # Create the .conky/ in the home directory
 mkdir ${HOME}/.conky;
 # Move rcfiles over to the home folder -- 
-
+cp ../*rc ${HOME}/.conky/;
+cp ../lua/ ${HOME}/.conky/;
+# Generate the conky start script
