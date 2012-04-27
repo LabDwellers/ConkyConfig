@@ -31,4 +31,3 @@ lua_load ~/workspace/git/ConkyConfig/Zanty/current/lua/rings1.lua
 lua_draw_hook_pre network 0 230
 lua_draw_hook_post cairo_cleanup
 TEXT
-LOL
