@@ -4,12 +4,10 @@
 # repository, a quick running of the setup script allows the ease of installation
 # that many conky's seem hard to do.
 printf "Setting up conky in the current user's home directory\n";
-printf "${HOME}/.conky/ will be the conky configuration folder\n";
-printf "----------------------------------------------------------------\n";
+printf "${HOME}/.conky/ will be the conky configuration folder\n\n";
 printf "WARNING!! This script assumes that all of the conky scripts to\n";
-printf "be installed are in the parent directory !!\n";
-printf "----------------------------------------------------------------\n";
-printf "Proceed with setup? [y/n]";
+printf "be installed are in the parent directory !!\n\n";
+printf "Proceed with setup? [y/n] ";
 read resp;
 if [ $resp != 'y' ] 
 	then
