@@ -19,5 +19,18 @@ printf "Proceeding with setup";
 mkdir ${HOME}/.conky;
 # Move rcfiles over to the home folder -- 
 cp ../*rc ${HOME}/.conky/;
-cp ../lua/ ${HOME}/.conky/;
+cp -R ../lua/ ${HOME}/.conky/;
 # Generate the conky start script
+touch ${HOME}/.start_conky;
+echo "/usr/bin/conky -c ${HOME}/.conky/conkyrc" 	>> ${HOME}/.start_conky;
+echo "/usr/bin/conky -c ${HOME}/.conky/memrc" 		>> ${HOME}/.start_conky;
+echo "/usr/bin/conky -c ${HOME}/.conky/swaprc" 		>> ${HOME}/.start_conky;
+echo "/usr/bin/conky -c ${HOME}/.conky/networkrc" 	>> ${HOME}/.start_conky;
+echo "/usr/bin/conky -c ${HOME}/.conky/signalrc" 	>> ${HOME}/.start_conky;
+echo "/usr/bin/conky -c ${HOME}/.conky/cpu0rc" 		>> ${HOME}/.start_conky;
+echo "/usr/bin/conky -c ${HOME}/.conky/cpu15rc" 	>> ${HOME}/.start_conky;
+echo "/usr/bin/conky -c ${HOME}/.conky/cpu26rc" 	>> ${HOME}/.start_conky;
+echo "/usr/bin/conky -c ${HOME}/.conky/cpu37rc" 	>> ${HOME}/.start_conky;
+echo "/usr/bin/conky -c ${HOME}/.conky/cpu48rc" 	>> ${HOME}/.start_conky;
+chmod +x ${HOME}/.start_conky;
+echo "complete"

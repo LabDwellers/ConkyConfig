@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "This will uninstall all files in ${HOME}/.conky/";
-echo "Proceed? [y/n]";
+printf "Proceed? [y/n] ";
 read resp;
 if [ $resp != 'y' ]
 	then
@@ -9,4 +9,5 @@ if [ $resp != 'y' ]
 fi;
 echo "Proceeding with removal";
 rm -rf ${HOME}/.conky/;
+rm -rf ${HOME}/.start_conky;
 echo "Complete";

@@ -188,9 +188,9 @@ function conky_bandwidth(x)
 end
 
 function conky_wireless_strength(x)
-	local starting_point = 3*math.pi / 2
-	conky_ring(3, (tonumber(x)-3)/2, 0.56, 0.01, 0.99, 1.0, starting_point, tonumber(conky_parse("${wireless_link_qual_perc wlan0}"))/100)
-	conky_ring(3, (tonumber(x)-3)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
+		local starting_point = 3*math.pi / 2
+		conky_ring(3, (tonumber(x)-3)/2, 0.56, 0.01, 0.99, 1.0, starting_point, tonumber(conky_parse("${wireless_link_qual_perc wlan0}"))/100)
+		conky_ring(3, (tonumber(x)-3)/2, 0.43, 0.43, 0.43, 0.2, starting_point, 1)
 end
 
 function conky_cairo_cleanup()
