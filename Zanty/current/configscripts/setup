@@ -14,7 +14,7 @@ if [ $resp != 'y' ]
 	printf "Setup aborted";
 	exit;
 fi;
-printf "Proceeding with setup";
+printf "Proceeding with setup\n";
 # Create the .conky/ in the home directory
 mkdir ${HOME}/.conky;
 # Move rcfiles over to the home folder -- 

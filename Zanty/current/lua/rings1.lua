@@ -7,7 +7,7 @@ require 'cairo'
 function conky_ring(width, radius, colorR, colorG, colorB, colorA, start, perc)
 	if conky_window == nil then return end
 	if cs == nil or cairo_xlib_surface_get_width(cs) ~= conky_window.width or cairo_xlib_surface_get_height(cs) ~= conky_window.height then
-		if cs then cairo_surface_destroy(cs)end
+		if cs then cairo_surface_destroy(cs) end
 		cs = cairo_xlib_surface_create(conky_window.display, conky_window.drawable, conky_window.visual, conky_window.width, conky_window.height)
 	end
 	if cr then cairo_destroy(cr) end
